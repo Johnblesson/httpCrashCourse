@@ -1,0 +1,27 @@
+{
+  "name": "httpcrashcourse",
+  "version": "1.0.0",
+  "description": "HTTP (Hypertext Transfer Protocol) and HTTPS (Hypertext Transfer Protocol Secure) are protocols used for transmitting data over the internet. They define the rules and conventions for how data is formatted and transmitted between a web client (such as a web browser) and a web server.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Johnblesson/httpCrashCourse.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Johnblesson/httpCrashCourse/issues"
+  },
+  "homepage": "https://github.com/Johnblesson/httpCrashCourse#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1"
+  }
+}

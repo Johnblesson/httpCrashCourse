@@ -77,3 +77,60 @@ HTTP (Hypertext Transfer Protocol) header fields are components of an HTTP reque
 13. **Allow:** Lists the HTTP methods supported by the resource.
 
 These are just some of the commonly used HTTP header fields. There are many more headers available, and custom headers can also be defined for specific applications or services. Headers play a critical role in controlling the behavior of HTTP requests and responses and ensuring the proper functioning and security of web applications and services.
+
+## HTTP STATUS CODE
+
+HTTP (Hypertext Transfer Protocol) status codes are three-digit numbers returned by a web server in response to an HTTP request made by a client (such as a web browser). These status codes are part of the HTTP protocol and provide information about the outcome of the request. They help both the client and server understand how to handle the request and response appropriately. HTTP status codes are grouped into five classes, each representing a different category of response:
+
+1. **Informational (1xx):** These status codes are informational and indicate that the request was received and understood but that further action is required. They are rarely used in practice.
+   - 100 Continue: The server has received the initial part of the request and is waiting for the client to continue.
+   - 101 Switching Protocols: The server is switching to a different protocol, as requested by the client.
+
+2. **Successful (2xx):** These status codes indicate that the request was successfully received, understood, and processed by the server.
+   - 200 OK: The request was successful, and the server is returning the requested data.
+   - 201 Created: The request was successful, and a new resource was created as a result.
+   - 204 No Content: The request was successful, but there is no additional content to return (often used for successful form submissions).
+
+3. **Redirection (3xx):** These status codes indicate that further action is needed to fulfill the request, typically because the resource has moved or is temporarily unavailable.
+   - 301 Moved Permanently: The requested resource has been permanently moved to a new URL.
+   - 302 Found (or Temporary Redirect): The requested resource has been temporarily moved to a different URL.
+   - 307 Temporary Redirect: Similar to 302, indicating a temporary redirection.
+   - 308 Permanent Redirect: Similar to 301, indicating a permanent redirection.
+
+4. **Client Error (4xx):** These status codes indicate that the client has made an error in the request, such as providing invalid input or requesting a non-existent resource.
+   - 400 Bad Request: The request is malformed or contains invalid syntax.
+   - 401 Unauthorized: Authentication is required to access the resource, and the client has not provided valid credentials.
+   - 403 Forbidden: The client does not have permission to access the resource.
+   - 404 Not Found: The requested resource could not be found on the server.
+   - 405 Method Not Allowed: The HTTP method used in the request is not allowed for the specified resource.
+
+5. **Server Error (5xx):** These status codes indicate that there was an error on the server side while processing the request.
+   - 500 Internal Server Error: A generic server error occurred that does not fit into a specific category.
+   - 502 Bad Gateway: The server, while acting as a gateway or proxy, received an invalid response from an upstream server.
+   - 503 Service Unavailable: The server is temporarily unavailable or overloaded and cannot handle the request.
+   - 504 Gateway Timeout: The server, acting as a gateway or proxy, did not receive a timely response from an upstream server.
+
+These are some of the most common HTTP status codes, but there are many more in the HTTP specification, each serving a specific purpose. HTTP status codes are an essential part of web communication and are used to inform clients and developers about the outcome of HTTP requests and responses.
+
+## HTTP/2
+HTTP/2, also known as HTTP/2.0, is the second major version of the Hypertext Transfer Protocol (HTTP), which is the protocol used for transmitting data on the World Wide Web. It was developed as an improvement over its predecessor, HTTP/1.1, to address some of the limitations and performance issues associated with the older protocol.
+
+Here are some key features and improvements introduced in HTTP/2:
+
+1. **Binary Protocol:** HTTP/2 uses a binary format for its communication, as opposed to the plain text format used in HTTP/1.1. This binary format is more efficient to parse and reduces the overhead of data transmission.
+
+2. **Multiplexing:** One of the significant improvements in HTTP/2 is multiplexing, which allows multiple requests and responses to be sent and received simultaneously over a single TCP connection. In HTTP/1.1, multiple connections were often needed to achieve similar parallelism, which could be less efficient.
+
+3. **Header Compression:** HTTP/2 employs header compression techniques to reduce the size of header fields in requests and responses. This reduces overhead and improves network efficiency, especially for bandwidth-constrained connections.
+
+4. **Server Push:** HTTP/2 introduces server push, which allows the server to send additional resources to the client before the client explicitly requests them. This can help optimize page load times by reducing the need for multiple round-trip requests.
+
+5. **Prioritization:** HTTP/2 supports request and response prioritization, allowing clients to specify the importance of different resources. This helps ensure that critical resources are loaded first, enhancing page rendering performance.
+
+6. **Stream Dependencies:** HTTP/2 introduces the concept of stream dependencies, allowing multiple resources to be associated with each other. This can be used to improve resource loading order and handling of dependent resources.
+
+7. **Backward Compatible:** HTTP/2 is designed to be backward compatible with HTTP/1.1, which means that older clients and servers can still communicate with it. However, to take advantage of HTTP/2's advanced features, both the client and server need to support it.
+
+8. **Security:** While not a direct feature of HTTP/2, its use of encryption (TLS/SSL) is strongly encouraged, making secure communication the default. This helps enhance overall web security.
+
+HTTP/2 has been widely adopted and is supported by most modern web browsers and web servers. Its improvements in efficiency and performance have contributed to faster web page loading times, reduced latency, and improved user experiences on the web. It is important to note that HTTP/2 is succeeded by HTTP/3, which further improves performance and security through the use of the QUIC transport protocol.
